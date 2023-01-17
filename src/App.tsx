@@ -40,7 +40,8 @@ function App() {
   const todosRef = useRef<HTMLInputElement>(null);
   const [stdEmail, setEmail] = useState<emailProps[]>([]);
   const [todosData, setTodos] = useState<todosProps[]>([]);
-  const submit =useCallback( () => {
+  // for student email input
+  const submit = useCallback(() => {
     if (emailRef.current !== null) {
       let email = emailRef.current.value;
       if (email.match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/)) {
@@ -52,7 +53,8 @@ function App() {
         alert("please enter valid email");
       }
     }
-  },[stdEmail]);
+  }, [stdEmail]);
+  //for todos
   const todos = useCallback(() => {
     if (todosRef.current !== null) {
       let todo = todosRef.current.value;
@@ -61,7 +63,7 @@ function App() {
       setTodos([...todosData]);
       todosRef.current.value = " ";
     }
-  },[todosData]);
+  }, [todosData]);
   return (
     <div className="App">
       <h3>Task1. Basic prop types</h3>
@@ -80,10 +82,10 @@ function App() {
       />
       <hr />
       <h3>Task2 :Typescript</h3>
-      <Taks2 todosRef={todosRef} todosData={todosData} todos={todos}  />
-      <Counter/>
+      <Taks2 todosRef={todosRef} todosData={todosData} todos={todos} />
+      <Counter />
     </div>
   );
 }
 
-export default memo (App);
+export default memo(App);
