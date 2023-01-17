@@ -8,7 +8,7 @@ type todosRefProps = {
   todos: () => void;
 };
 const Taks2 = (props: todosRefProps) => {
-  console.log("helo");
+  console.log("Task2");
   return (
     <>
       <h4>Todos</h4>

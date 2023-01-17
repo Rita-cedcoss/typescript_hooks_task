@@ -14,7 +14,7 @@ type marksProps = {
   submitFun: () => void;
 };
 const Marks = (props: marksProps) => {
-  console.log("hiiii");
+  console.log("Marks");
   return (
     <div>
       <div className="col-5 m-auto border p-4 mt-3">
